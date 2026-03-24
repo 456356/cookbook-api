@@ -31,7 +31,7 @@ jobs:
         run: flake8 --max-line-length=88 --extend-ignore=E203,W503 crud.py database.py main.py models.py schemas.py routers/
 
       - name: Check import sorting with isort
-        run: isort --check-only --diff crud.py database.py main.py models.py schemas.py routers/
+        run: isort --profile=black --check-only --diff crud.py database.py main.py models.py schemas.py routers/
 
       - name: Check formatting with black
         run: black --check --diff crud.py database.py main.py models.py schemas.py routers/
