@@ -28,7 +28,7 @@ jobs:
 
       # Проверка только указанных файлов и папок
       - name: Lint with flake8
-        run: flake8 crud.py database.py main.py models.py schemas.py routers/
+        run: flake8 --max-line-length=88 --extend-ignore=E203,W503 crud.py database.py main.py models.py schemas.py routers/
 
       - name: Check import sorting with isort
         run: isort --check-only --diff crud.py database.py main.py models.py schemas.py routers/

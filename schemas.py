@@ -5,8 +5,11 @@ from pydantic import BaseModel, ConfigDict, Field
 
 class RecipeBase(BaseModel):
     title: str = Field(..., description="Название блюда", min_length=1)
+
     cooking_time: int = Field(..., description="Время приготовления в минутах", gt=0)
+
     ingredients: List[str] = Field(..., description="Список ингредиентов")
+
     description: str = Field(..., description="Пошаговое описание приготовления")
 
 
